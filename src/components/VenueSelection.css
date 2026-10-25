@@ -1,0 +1,68 @@
+.venue-selection {
+  padding: 0 0 110px;
+}
+
+.venue-selection__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+.venue-selection__eyebrow {
+  color: var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.venue-selection__header h2 {
+  margin: 10px 0 8px;
+
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.venue-selection__header p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 13px;
+}
+
+.venue-selection__count {
+  padding: 8px 12px;
+
+  background: white;
+
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.venue-selection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+@media (max-width: 750px) {
+  .venue-selection__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .venue-selection__grid {
+    grid-template-columns: 1fr;
+  }
+}

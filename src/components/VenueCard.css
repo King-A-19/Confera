@@ -1,0 +1,274 @@
+.venue-card {
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.venue-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.venue-card--selected {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 2px rgba(91, 75, 219, 0.08),
+    var(--shadow-md);
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.venue-card__visual {
+  position: relative;
+
+  height: 190px;
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #e9e6ff, #f7f8fc);
+}
+
+.venue-card__visual::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 12, 20, 0.35),
+      transparent 45%
+    );
+}
+
+.venue-card__image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.venue-card:hover .venue-card__image {
+  transform: scale(1.04);
+
+  filter: brightness(0.96);
+}
+
+.venue-card__selected {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  padding: 7px 10px;
+
+  background: var(--color-primary);
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.venue-card__category {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+
+  padding: 6px 9px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border-radius: 20px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.venue-card__content {
+  padding: 22px;
+}
+
+.venue-card__heading {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.venue-card__heading h3 {
+  margin: 0 0 5px;
+
+  font-size: 17px;
+  letter-spacing: -0.4px;
+}
+
+.venue-card__heading span {
+  color: var(--color-text-muted);
+
+  font-size: 10px;
+}
+
+.venue-card__heading strong {
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+
+  font-size: 15px;
+}
+
+.venue-card__content > p {
+  margin: 18px 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.venue-card__features {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 20px;
+}
+
+.venue-card__features span {
+  padding: 6px 8px;
+
+  background: var(--color-background);
+
+  border-radius: 6px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 9px;
+}
+
+.venue-card__button {
+  width: 100%;
+
+  padding: 11px 15px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background: white;
+
+  color: var(--color-text);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.venue-card__button:hover {
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+}
+
+.venue-card__button--selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+
+  color: white;
+}
+
+.venue-card__button--selected:hover {
+  background: var(--color-primary-dark);
+
+  color: white;
+}
+
+.venue-card--capacity-warning {
+  border-color: #eadfca;
+}
+
+.venue-card__warning {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin: 0 0 18px;
+  padding: 11px;
+
+  background: #fff8e8;
+
+  border: 1px solid #f1e3c3;
+  border-radius: 8px;
+}
+
+.venue-card__warning > span {
+  flex-shrink: 0;
+
+  font-size: 13px;
+}
+
+.venue-card__warning p {
+  margin: 0;
+
+  color: #856a2a;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.venue-card__warning strong {
+  color: #654d16;
+}
+
+.venue-card__button--disabled {
+  cursor: not-allowed;
+
+  background: #f0f0f3;
+
+  border-color: #e2e2e7;
+
+  color: #999ca7;
+}
+
+.venue-card__button--disabled:hover {
+  background: #f0f0f3;
+
+  border-color: #e2e2e7;
+
+  color: #999ca7;
+}
